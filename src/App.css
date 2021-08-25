@@ -15,6 +15,7 @@
 .App-button {
   color: #0f0f0f;
   background-color: #fff;
+  border: 2px solid green;
   border-radius: 4px;
   font-size: large;
   font-weight: 500;
