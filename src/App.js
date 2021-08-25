@@ -1,7 +1,9 @@
 import { Component } from 'react';
 import './App.css';
+import Section from './Components/Section';
 import Button from './Components/FeedbackCard/FeedbackOptions';
 import Statistics from './Components/Statistics';
+import Notification from './Components/Notification';
 
 class App extends Component {
   static defaultProps = {
@@ -66,18 +68,25 @@ class App extends Component {
 
     return (
       <div>
-        <h1>Please leave feedback</h1>
-        <Button
-          options={['Good', 'Neutral', 'Bad']}
-          onLeaveFeedback={this.onLeaveFeedback}
-        />
-        <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={total}
-          positivePercentage={countPercentage}
-        />
+        <Section title="Please leave feedback">
+          <Button
+            options={['Good', 'Neutral', 'Bad']}
+            onLeaveFeedback={this.onLeaveFeedback}
+          />
+        </Section>
+        <Section title="Statistics">
+          {total ? (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={total}
+              positivePercentage={countPercentage}
+            />
+          ) : (
+            <Notification message="No feedback given" />
+          )}
+        </Section>
       </div>
     );
   }
