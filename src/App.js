@@ -67,7 +67,7 @@ class App extends Component {
     );
 
     return (
-      <div>
+      <div className="App">
         <Section title="Please leave feedback">
           <Button
             options={['Good', 'Neutral', 'Bad']}
