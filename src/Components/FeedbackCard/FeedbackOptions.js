@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function Button({ options, onLeaveFeedback }) {
   return (
     <div>
@@ -15,4 +17,9 @@ export default function Button({ options, onLeaveFeedback }) {
       })}
     </div>
   );
-}
+};
+
+Button.propTypes = {
+  options:PropTypes.array.isRequired,
+  onLeaveFeedback:PropTypes.func.isRequired,
+};
